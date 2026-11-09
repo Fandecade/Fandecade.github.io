@@ -1,9 +1,15 @@
 <style>
-.pinned-badge{display:inline-block;margin-left:.4em;padding:0 .4em;font-size:.72em;line-height:1.6;color:#fff;background:#e07a5f;border-radius:3px;vertical-align:middle}
+ul.blog-posts li.post-item{display:flex;align-items:baseline;gap:.4em}
+ul.blog-posts li span.post-date{flex:0 0 130px}
+ul.blog-posts a.post-title{flex:1 1 auto;min-width:0}
+ul.blog-posts li span.post-meta{flex:0 0 auto;margin-left:auto;text-align:right;white-space:nowrap;font-size:.8em}
+.pinned-badge{display:inline-block;padding:0 .4em;font-size:.85em;line-height:1.6;color:#fff;background:#e07a5f;border-radius:3px;vertical-align:middle}
+.post-meta .post-category{display:inline-block;margin-left:.4em;padding:0 .4em;border:1px solid currentColor;border-radius:3px;opacity:.75}
 .post-categories{margin-left:.5em}
 .post-categories a{font-size:.85em;margin-left:.4em}
 ul.category-list{list-style:none;padding:0}
 ul.category-list li{margin:.45em 0}
 ul.category-list small{color:#777}
 @media(prefers-color-scheme:dark){ul.category-list small{color:#aaa}}
+@media(max-width:600px){ul.blog-posts li span.post-date{flex:0 0 90px}ul.blog-posts li span.post-meta{font-size:.72em}}
 </style>

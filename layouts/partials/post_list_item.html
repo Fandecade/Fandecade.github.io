@@ -1,0 +1,17 @@
+{{ $page := . }}
+<li class="post-item">
+  <span class="post-date">
+    <i>
+      <time datetime='{{ $page.Date.Format "2006-01-02" }}'>
+        {{ $page.Date.Format (default "02 Jan, 2006" $page.Site.Params.dateFormat) }}
+      </time>
+    </i>
+  </span>
+  <a class="post-title" href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+  <span class="post-meta">
+    {{ if $page.Params.pinned }}<span class="pinned-badge">置顶</span>{{ end }}
+    {{ with $page.GetTerms "categories" }}
+    {{ range . }}<a class="post-category" href="{{ .Permalink }}">{{ .LinkTitle }}</a>{{ end }}
+    {{ end }}
+  </span>
+</li>

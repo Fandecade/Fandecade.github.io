@@ -14,44 +14,11 @@
 
   <ul class="blog-posts">
     {{ range $pinned.ByDate.Reverse }}
-    <li>
-      <span>
-        <i>
-          <time datetime='{{ .Date.Format "2006-01-02" }}'>
-            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-          </time>
-        </i>
-      </span>
-      <span>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-        <span class="pinned-badge">置顶</span>
-        {{ with .GetTerms "categories" }}
-        <span class="post-categories">
-          {{ range . }}<a href="{{ .Permalink }}">分类:{{ .LinkTitle }}</a>{{ end }}
-        </span>
-        {{ end }}
-      </span>
-    </li>
+    {{ partial "post_list_item.html" . }}
     {{ end }}
 
     {{ range $normal.ByDate.Reverse }}
-    <li>
-      <span>
-        <i>
-          <time datetime='{{ .Date.Format "2006-01-02" }}'>
-            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-          </time>
-        </i>
-      </span>
-      <span>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-        {{ with .GetTerms "categories" }}
-        <span class="post-categories">
-          {{ range . }}<a href="{{ .Permalink }}">分类:{{ .LinkTitle }}</a>{{ end }}
-        </span>
-        {{ end }}
-      </span>
-    </li>
+    {{ partial "post_list_item.html" . }}
     {{ end }}
 
     {{ if not .Pages }}
