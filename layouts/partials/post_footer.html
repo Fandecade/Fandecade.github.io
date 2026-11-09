@@ -1,0 +1,16 @@
+{{ if eq .Type "blog" }}{{ if (.Param "enablePostNavigator")}}
+{{- partial "post_navigator.html" . -}}
+{{ end }}{{ end }}
+
+{{ $categories := .GetTerms "categories" }}
+{{ $tags := .GetTerms "tags" }}
+{{ if or $categories $tags }}
+<p>
+  {{ range $categories }}
+  <a href="{{ .Permalink }}" class="post-category">分类:{{ .LinkTitle }}</a>
+  {{ end }}
+  {{ range $tags }}
+  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+  {{ end }}
+</p>
+{{ end }}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+<content>
+  <h3>{{ .Title }}</h3>
+  {{ .Content }}
+
+  <ul class="category-list">
+    {{ range .Pages.ByTitle }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <small>({{ len .Pages }} 篇)</small>
+    </li>
+    {{ else }}
+    <li>暂无分类</li>
+    {{ end }}
+  </ul>
+</content>
+{{ end }}

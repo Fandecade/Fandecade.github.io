@@ -1,7 +1,7 @@
 +++
 title = "关于"
 menu = "main"
-weight = 3
+weight = 4
 +++
 
 你好,我是 Fandacade。

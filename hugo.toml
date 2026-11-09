@@ -8,8 +8,9 @@ defaultContentLanguage = "zh-cn"
 locale = "zh-CN"
 enableRobotsTXT = true
 
-disableKinds = ["taxonomy"]
-ignoreErrors = ["error-disable-taxonomy"]
+[taxonomies]
+  category = "categories"
+  tag = "tags"
 
 [permalinks]
   blog = "/:slug/"
