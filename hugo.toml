@@ -1,0 +1,27 @@
+baseURL = "https://fandacade.github.io/"
+theme = "hugo-bearblog"
+
+title = "Fandacade 的博客"
+author = "Fandacade"
+copyright = "© 2026 Fandacade"
+defaultContentLanguage = "zh-cn"
+locale = "zh-CN"
+enableRobotsTXT = true
+
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
+
+[permalinks]
+  blog = "/:slug/"
+
+[params]
+  description = "记录学习、代码与生活"
+  dateFormat = "2006-01-02"
+  enablePostNavigator = true
+
+[markup]
+  [markup.highlight]
+    style = "friendly"
+    lineNos = true
+    lineNumbersInTable = false
+    codeFences = true
